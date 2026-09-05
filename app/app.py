@@ -303,7 +303,7 @@ with tab3:
             cat_price = [group["Price"].values for _, group in raw_df.groupby("Category")]
             cat_names = list(raw_df["Category"].unique())
             fig, ax = plt.subplots(figsize=(6, 4))
-            ax.boxplot(cat_price, labels=cat_names)
+            ax.boxplot(cat_price, tick_labels=cat_names)
             ax.set_ylabel("Price (₹)")
             ax.set_title("Category Price Range Distribution")
             plt.xticks(rotation=45)
