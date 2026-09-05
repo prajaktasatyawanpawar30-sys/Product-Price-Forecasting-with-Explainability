@@ -176,23 +176,6 @@ pytest tests/
 python -m unittest discover tests
 ```
 
----
-
-## 💡 6. College Viva / Exam FAQ Guide
-
-**Q1. What is the role of Explainable AI (XAI) in this project?**  
-> Traditional ML models are black boxes. In pricing, retailers and customers need to know *why* a price was forecasted. Using SHAP (Shapley Additive exPlanations), our system attributes the exact rupee contribution of each feature (e.g. brand premium, discount rate, rating) to the final price.
-
-**Q2. How does SHAP calculate feature contributions?**  
-> SHAP is based on cooperative game theory. It considers all possible subsets of features (coalitions) and calculates the marginal contribution of each feature to the prediction compared to the base average prediction.
-
-**Q3. Why compare multiple regression models?**  
-> Different models capture different patterns. Linear and Ridge models capture basic linear trends, while tree ensembles (Random Forest, Gradient Boosting, XGBoost) capture complex non-linear interactions between brand, category, and discounts. Comparing them ensures we select the model with the highest $R^2$ and lowest $RMSE$.
-
-**Q4. How do you prevent data leakage?**  
-> All feature scaling and categorical encoders are fitted strictly on the training set (`fit_transform`) and subsequently applied to test and inference sets (`transform`).
-
----
 
 ## 📜 7. License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
